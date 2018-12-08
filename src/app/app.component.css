@@ -1,0 +1,24 @@
+nav{
+  height: 72px;
+  width: 100%;
+  background: transparent;
+  padding: 0 10px;
+}
+nav .header { margin: 0; }
+nav .logo-title{ margin: 16px; cursor: pointer; }
+nav .powered span{ vertical-align: middle; margin-right: 2px; color: gray; }
+nav .powered .logo{ height: 70px; width: auto; }
+
+@media (max-width: 600px) {
+  nav{
+    height: 49px;
+    padding: 0;
+  }
+  nav .powered {
+    display: none;
+  }
+  nav .logo-title{
+    font-size: 25px;
+    margin: 7px 7px 7px 7px !important;
+  }
+}
