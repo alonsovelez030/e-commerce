@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, Input } from '@angular/core';
 
 /* Services */
 import { CategoriesService } from '../services/categories.service';
@@ -12,7 +11,13 @@ import { CategoriesService } from '../services/categories.service';
 export class SideBarComponent implements OnInit {
 
   backButton:boolean = false;
-  constructor(public categories: CategoriesService) { }
+  showMenuCategories:boolean;
+  @Input() set changeView(show: boolean) {
+    this.showMenuCategories = show;
+  };
+
+  constructor(public categories: CategoriesService) {
+   }
 
   ngOnInit() {}
 

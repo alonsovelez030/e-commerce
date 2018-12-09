@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'aplicacion-ecommerce';
+  showMenu:boolean = false;
+
+  showMenuResponsive(event){
+    this.showMenu = event;
+  }
 }

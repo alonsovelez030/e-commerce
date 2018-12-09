@@ -1,5 +1,6 @@
-<app-nav-bar></app-nav-bar>
-<app-side-bar></app-side-bar>
+<app-nav-bar (showMenuResponsive)="showMenuResponsive($event)"></app-nav-bar>
+<app-side-bar [changeView]="showMenu"></app-side-bar>
+<div [ngClass]="{'box-shadow': showMenu}"></div>
 <main>
   <router-outlet></router-outlet>
 </main>

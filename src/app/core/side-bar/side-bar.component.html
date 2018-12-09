@@ -1,4 +1,4 @@
-<div class="sidenav">
+<div class="sidenav d-none d-sm-none d-lg-block" [ngClass]="{'float-side-bar':showMenuCategories}">
     <div *ngIf="backButton">
         <div class="enlace-re">
             <a (click)="resetCategories()"><p><span><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></span> Todos los productos</p></a>

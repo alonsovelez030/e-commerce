@@ -11,7 +11,10 @@ nav .header { margin: 0; }
 nav .logo-title{ margin: 10px; cursor: pointer; }
 
 .container-shopping{ padding: 11px 40px; }
+.container-shopping .nav-bar-button{ float: right; }
+.container-shopping .shopping-car { float: right; }
 .container-shopping .shopping-car  .icon { color: #00b7c7; font-size: 1.3em; }
+.container-shopping .nav-bar-button  i{ color: #00b7c7; margin: 4px;}
 .container-shopping .shopping-car  .count {
   position: absolute;
   top: -2px;
@@ -35,6 +38,7 @@ nav .logo-title{ margin: 10px; cursor: pointer; }
   }
   nav .logo-title{
     font-size: 25px;
-    margin: 7px 7px 7px 7px !important;
+    margin: 7px 7px !important;
   }
+  .container-shopping{ padding: 7px 7px; }
 }

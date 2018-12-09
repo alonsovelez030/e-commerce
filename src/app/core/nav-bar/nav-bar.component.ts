@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
+  @Output() showMenuResponsive = new EventEmitter<any>();
+  showMenu:boolean = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  showMenuCategories(){
+    this.showMenu = this.showMenu ? false : true;
+    this.showMenuResponsive.emit(this.showMenu);
+  }
 }

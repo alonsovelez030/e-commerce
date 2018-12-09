@@ -6,6 +6,7 @@
   width: 250px;
   overflow: auto;
   padding: 10px 0;
+  float: left;
 }
 .sidenav ul{ padding:0px; }
 .sidenav ul li{
@@ -48,4 +49,26 @@
   vertical-align: middle;
   color: #24b6c4;
   margin-right: 2px;
+}
+
+@media (max-width: 991px) {
+  @keyframes slowshowing {
+    0%{
+      width: 100px;
+    }
+    50%{
+      width: 150px;
+    }
+    100%{
+      width: 250px;
+    }
+  }
+  .float-side-bar{
+    display: block !important;
+    position: absolute !important;
+    z-index: 1001;
+    animation: slowshowing 0.1s ease-in-out;
+    -webkit-animation: slowshowing 0.1s ease-in-out;
+    -moz-animation: slowshowing 0.1s ease-in-out;
+  }
 }
