@@ -1,0 +1,51 @@
+.sidenav {
+  height: 100%;
+  background-color: #111;
+  border-right: 1px solid #e5edef;
+  background-color: #fff;
+  width: 250px;
+  overflow: auto;
+  padding: 10px 0;
+}
+.sidenav ul{ padding:0px; }
+.sidenav ul li{
+  display: block;
+  min-height: 45px;
+  line-height: 45px;
+  transition: .3s;
+}
+.sidenav ul li a{
+  display: block;
+  transition: .3s;
+  text-align: left;
+  color: #333;
+  font-size: 14px;
+  padding: 0 20px;
+  position: relative;
+}
+.sidenav ul li a i{ float: right; }
+.sidenav ul li:hover, .active{ background-color: #f3f3f3; }
+.sidenav ul li>a:hover, .active a{ color: #1cb7c7 !important; }
+
+/* BackButton */
+.enlace-re {
+  margin: .6em 1em;
+  position: relative;
+  z-index: 100;
+  width: auto;
+}
+.enlace-re a {
+  cursor: pointer;
+  text-decoration: none !important;
+}
+.enlace-re p {
+  margin: 0;
+  font-size: .9em;
+  color: #999;
+}
+.enlace-re i{
+  font-size: 18px;
+  vertical-align: middle;
+  color: #24b6c4;
+  margin-right: 2px;
+}

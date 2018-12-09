@@ -1,0 +1,15 @@
+<div class="sidenav">
+    <div *ngIf="backButton">
+        <div class="enlace-re">
+            <a (click)="resetCategories()"><p><span><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></span> Todos los productos</p></a>
+        </div>
+        <hr>
+    </div>
+    <ul>
+      <li *ngFor="let categorie of categories.categorielist"
+          (click)="loadCats(categorie)"
+          [ngClass]="{'active':categories.categorieSelected == categorie.id}">
+        <a>{{ categorie.name }} <i class="chevron right icon"></i></a>
+      </li>
+    </ul>
+</div>
