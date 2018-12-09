@@ -4,14 +4,15 @@ import { HttpClient } from '@angular/common/http';
 /* Models */
 import { Categories } from '../../models/categories';
 import { Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoriesService {
 
-  categorielist:Categories[];
-  categorieSelected:Categories;
+  categorieSelected = new Subject<Categories>();
+  getSelectedCategorie$ = this.categorieSelected.asObservable();
 
   constructor(private http: HttpClient) {
   }
@@ -21,13 +22,10 @@ export class CategoriesService {
   }
 
   setCategorie(level){
-    if(level.sublevels){
-      this.categorielist = level.sublevels
-    }
-    this.categorieSelected = level.id;
+    this.categorieSelected.next(level);
   }
 
   resetCategories(){
-    this.categorieSelected = null;
+    this.categorieSelected.next(null);
   }
 }

@@ -1,3 +1,9 @@
 .cards{
   padding: 10px 60px;
 }
+
+@media (max-width: 991px) {
+  .card{
+    width: 100% !important;
+  }
+}

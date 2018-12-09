@@ -7,6 +7,7 @@ nav{
   background-color: #fff;
   border-bottom: 1px solid #e5edef;
   position: fixed;
+  z-index: 1002;
 }
 nav .header { margin: 0; }
 nav .logo-title{ margin: 10px; cursor: pointer; }
@@ -36,7 +37,6 @@ nav .logo-title{ margin: 10px; cursor: pointer; }
   nav{
     height: 49px;
     padding: 0;
-    z-index: 1002;
   }
   nav .logo-title{
     font-size: 25px;

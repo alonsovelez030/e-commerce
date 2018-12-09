@@ -2,13 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-/* Models */
-import { Products } from '../../models/products';
-
 @Injectable()
 export class ProductsService {
-
-  productList:Products[];
 
   constructor(private http: HttpClient) {
   }

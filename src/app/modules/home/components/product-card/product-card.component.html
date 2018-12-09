@@ -1,14 +1,14 @@
 <div class="ui cards">
   <div class="card" *ngFor="let product of products">
     <div class="content">
-      <div class="header">Elliot Fu</div>
+      <div class="header">{{ product.name | titlecase }}</div>
       <div class="description">
-        Elliot Fu is a film-maker from New York.
+        Precio: {{ product.price | currency:'$' : true : '1.0-2' }} - Stock: {{ product.quantity }}.
       </div>
     </div>
-    <div class="ui bottom attached button">
+    <div class="ui teal bottom attached button">
       <i class="add icon"></i>
-      Add Friend
+      Agregar al carrito
     </div>
   </div>
 </div>

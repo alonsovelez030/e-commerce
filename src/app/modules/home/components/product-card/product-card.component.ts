@@ -7,7 +7,11 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 })
 export class ProductCardComponent implements OnInit {
 
-  @Input() products;
+  products:any[];
+  @Input() set ProductList(data:any) {
+    this.products = data;
+  };
+
   @Output() addShopping = new EventEmitter<any>();
 
   constructor() { }

@@ -6,9 +6,9 @@
         <hr>
     </div>
     <ul>
-      <li *ngFor="let categorie of categories.categorielist"
+      <li *ngFor="let categorie of categorielist"
           (click)="loadCats(categorie)"
-          [ngClass]="{'active':categories.categorieSelected == categorie.id}">
+          [ngClass]="{'active':selectedCategorie != undefined && selectedCategorie.id == categorie.id}">
         <a>{{ categorie.name }} <i class="chevron right icon"></i></a>
       </li>
     </ul>
