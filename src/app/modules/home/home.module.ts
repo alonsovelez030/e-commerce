@@ -1,10 +1,14 @@
+/* Core */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './pages/home.component';
 /* Modules */
 import { SharedModule } from '../../shared/shared.module';
+import { HomeRoutingModule } from './home-routing.module';
+
+/* Components */
+import { HomeComponent } from './pages/home.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
   imports: [
@@ -14,6 +18,7 @@ import { SharedModule } from '../../shared/shared.module';
   ],
   declarations: [
     HomeComponent,
+    ProductCardComponent
   ]
 })
 export class HomeModule { }

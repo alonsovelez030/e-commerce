@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 /* Models */
 import { Categories } from '../../models/categories';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,16 +14,10 @@ export class CategoriesService {
   categorieSelected:Categories;
 
   constructor(private http: HttpClient) {
-    this.getCategoriesData();
   }
 
-  getCategoriesData(){
-    this.http.get<any>('http://localhost:4200/assets/json-files/categories.json')
-    .subscribe(
-      response =>{
-        this.categorielist = response.categories;
-      },err =>{}
-    );
+  getCategoriesData(): Observable<any>{
+    return this.http.get<any>('http://localhost:4200/assets/json-files/categories.json')
   }
 
   setCategorie(level){
@@ -33,7 +28,6 @@ export class CategoriesService {
   }
 
   resetCategories(){
-    this.getCategoriesData();
     this.categorieSelected = null;
   }
 }

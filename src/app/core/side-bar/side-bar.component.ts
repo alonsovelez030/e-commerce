@@ -17,9 +17,20 @@ export class SideBarComponent implements OnInit {
   };
 
   constructor(public categories: CategoriesService) {
-   }
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.reloadCats();
+  }
+
+  reloadCats(){
+    this.categories.getCategoriesData()
+    .subscribe(
+      response =>{
+        this.categories.categorielist = response.categories;
+      },err =>{}
+    );
+  }
 
   loadCats(level){
     this.backButton = true;
@@ -28,6 +39,7 @@ export class SideBarComponent implements OnInit {
 
   resetCategories(){
     this.backButton = false;
+    this.reloadCats();
     this.categories.resetCategories();
   }
 }

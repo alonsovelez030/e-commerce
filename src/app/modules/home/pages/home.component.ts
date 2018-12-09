@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 /* Services */
+import { ProductsService } from '../../../core/services/products.service';
+
 
 @Component({
   selector: 'app-home',
@@ -10,9 +12,15 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(public products: ProductsService) {}
 
   ngOnInit() {
+    this.products.getProductsData()
+    .subscribe(
+      response =>{
+        this.products.productList = response.products;
+      },err => {}
+    )
   }
 
 

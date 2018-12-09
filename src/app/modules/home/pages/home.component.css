@@ -1,0 +1,14 @@
+.content-products{
+  float: left;
+  padding-left: 250px;
+  padding-top: 60px;
+  width: 100%;
+}
+.title{ padding: 15px 60px; }
+.title h1{ font-weight: 100; }
+@media (max-width: 991px) {
+  .content-products{
+    float: none;
+    padding-left: 0;
+  }
+}
