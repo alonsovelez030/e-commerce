@@ -74,7 +74,7 @@ nav .logo-title{ margin: 10px; cursor: pointer; }
 }
 
 /* Cards */
-.card .extra .description{ margin-top: 2em !important; }
+.card .content .description{ margin-top: 2.5em !important; }
 
 @media (max-width: 991px) {
   nav{
