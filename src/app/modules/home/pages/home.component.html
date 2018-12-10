@@ -1,7 +1,17 @@
 <div class="content-products">
     <div class="title">
-        <h1 class="ui header">{{ Title }}</h1>
-        <app-filters  (triggerFilter)="triggerFilter($event)"></app-filters>
+        <h1 class="ui header">
+          {{ Title }}
+          <button class="ui basic teal button ml-2" (click)="showFilterFn()">
+            Filtrar
+            <i *ngIf="!showFilter" class="filter icon"></i>
+            <i *ngIf="showFilter" class="arrow up icon"></i>
+          </button>
+        </h1>
+        <div class="contain-filters" [ngClass]="{'show-filter': showFilter}">
+            <app-filters  (triggerFilter)="triggerFilter($event)"></app-filters>
+            <hr class="mt-5">
+        </div>
     </div>
     <app-product-card [products]="productList" [rangeFilter]="FilterOptions"></app-product-card>
 </div>

@@ -1,66 +1,74 @@
-<!-- Filter Price -->
-<label>
-  <input type="range"
-          min="0"
-          [max]="30000"
-          numeric
-          [(ngModel)]="FilterOptions.min"
-          (ngModelChange)="emitFilter()">
-  Min:{{ FilterOptions.min | currency }}
-</label>
-<hr>
-<label>
-  <input type="range"
-          min="0"
-          [max]="30000"
-          numeric
-          [(ngModel)]="FilterOptions.max"
-          (ngModelChange)="emitFilter()">
-  Max: {{ FilterOptions.max |  currency }}
-</label>
-<hr>
+<div class="row">
+  <!-- Filter Price -->
+  <div class="contents">
+      <p>Filtra por precio</p>
+      <label class="input-range">
+        <input type="range"
+                min="0"
+                [max]="30000"
+                numeric
+                [(ngModel)]="FilterOptions.min"
+                (ngModelChange)="emitFilter()">
+        <a class="ui teal circular label ml-2">{{ FilterOptions.min | currency }}</a>
+      </label>
+      <label class="ml-3 input-range">
+        <input type="range"
+                min="0"
+                [max]="30000"
+                numeric
+                [(ngModel)]="FilterOptions.max"
+                (ngModelChange)="emitFilter()">
+        <a class="ui teal circular label ml-2">{{ FilterOptions.max |  currency }}</a>
+      </label>
+  </div>
 
-<!-- Filter Stock -->
-<label>
-  <input type="range"
-          min="0"
-          max="1000"
-          numeric
-          [(ngModel)]="FilterOptions.minStock"
-          (ngModelChange)="emitFilter()">
-  MinStock:{{ FilterOptions.minStock }}
-</label>
-<hr>
-<label>
-  <input type="range"
-          min="0"
-          max="1000"
-          numeric
-          [(ngModel)]="FilterOptions.maxStock"
-          (ngModelChange)="emitFilter()">
-  MaxStock: {{ FilterOptions.maxStock }}
-</label>
-<hr>
+  <!-- Filter Stock -->
+  <div class="contents">
+      <p>Filtra por cantidad de stock</p>
+      <label class="input-range">
+        <input type="range"
+                min="0"
+                max="1000"
+                numeric
+                [(ngModel)]="FilterOptions.minStock"
+                (ngModelChange)="emitFilter()">
+        <a class="ui teal circular label ml-2">{{ FilterOptions.minStock }}</a>
+      </label>
+      <label class="ml-3 input-range">
+        <input type="range"
+                min="0"
+                max="1000"
+                numeric
+                [(ngModel)]="FilterOptions.maxStock"
+                (ngModelChange)="emitFilter()">
+        <a class="ui teal circular label ml-2">{{ FilterOptions.maxStock }}</a>
+      </label>
+  </div>
 
-<!-- Available -->
-<div class="ui form">
-    <div class="grouped fields">
-        <label>Disponible</label>
-        <div class="field">
-            <sui-checkbox [(ngModel)]="FilterOptions.available" (ngModelChange)="emitFilter()" class="toggle">Productos disponibles</sui-checkbox>
+  <div class="contents">
+    <!-- Available -->
+    <div class="ui form mt-4">
+        <div class="grouped fields">
+            <div class="field">
+                <sui-checkbox [(ngModel)]="FilterOptions.available" (ngModelChange)="emitFilter()" class="toggle teal">Productos disponibles</sui-checkbox>
+            </div>
         </div>
     </div>
-</div>
+  </div>
 
-<!-- Sort -->
-<sui-select class="selection"
-            [(ngModel)]="FilterOptions.sort"
-            (ngModelChange)="emitFilter()"
-            labelField="name"
-            placeholder="Orden"
-            [options]="options"
-            #select>
-    <sui-select-option *ngFor="let option of FilterOptions.sortOptions"
-                        [value]="option">
-    </sui-select-option>
-</sui-select>
+  <div class="contents">
+    <!-- Sort -->
+    <sui-select class="selection"
+                style="margin-top:12px;"
+                [(ngModel)]="FilterOptions.sort"
+                (ngModelChange)="emitFilter()"
+                labelField="name"
+                placeholder="Ordenar"
+                [options]="options"
+                #select>
+        <sui-select-option *ngFor="let option of FilterOptions.sortOptions"
+                            [value]="option">
+        </sui-select-option>
+    </sui-select>
+  </div>
+</div>

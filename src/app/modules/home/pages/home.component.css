@@ -6,6 +6,10 @@
 }
 .title{ padding: 15px 60px; }
 .title h1{ font-weight: 100; }
+.title button{ vertical-align: middle; }
+
+.contain-filters{ display: none; }
+.show-filter{ display: block; }
 @media (max-width: 991px) {
   .content-products{
     float: none;

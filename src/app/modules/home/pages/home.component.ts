@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   Title:string;
   Filters:any = {};
   FilterOptions:any;
+  showFilter:boolean = false;
 
   constructor(public products: ProductsService,
               private categories: CategoriesService) {
@@ -61,5 +62,9 @@ export class HomeComponent implements OnInit {
 
   triggerFilter(event){
     this.FilterOptions = event;
+  }
+
+  showFilterFn(){
+    this.showFilter = this.showFilter ? false : true;
   }
 }
