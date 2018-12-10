@@ -6,7 +6,7 @@ import { Products } from '../../../models/products';
 /* Services */
 import { ProductsService } from '../../../core/services/products.service';
 import { CategoriesService } from '../../../core/services/categories.service';
-
+import { ShoppingCarService } from '../../../core/services/shopping-car.service';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +22,8 @@ export class HomeComponent implements OnInit {
   showFilter:boolean = false;
 
   constructor(public products: ProductsService,
-              private categories: CategoriesService) {
+              private categories: CategoriesService,
+              private shopping: ShoppingCarService) {
   }
 
   ngOnInit() {
@@ -66,5 +67,9 @@ export class HomeComponent implements OnInit {
 
   showFilterFn(){
     this.showFilter = this.showFilter ? false : true;
+  }
+
+  addShopping(event){
+    this.shopping.addProducts(event);
   }
 }

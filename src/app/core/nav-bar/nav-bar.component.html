@@ -6,9 +6,21 @@
     <div class="nav-bar-button ml-2 d-block d-sm-block d-lg-none" (click)="showMenuCategories()">
         <i class="bars icon big"></i>
     </div>
-    <div class="shopping-car dropdown">
-      <span class="count animated number_message">0</span>
+    <div class="shopping-car dropdown" (click)="showShippingCar()">
+      <span class="count animated number_message" *ngIf="shippingList.length">
+        {{ shippingList.length }}
+      </span>
       <span class="icon"><i class="shopping basket icon"></i></span>
     </div>
   </div>
 </nav>
+
+<!-- Shoopping cart -->
+<div class="sidenav d-none" [ngClass]="{'show-ship':showShip}">
+  <div>
+      <div *ngFor="let ship of shippingList">
+        {{ ship.product.name }} - {{ ship.quantity }}
+      </div>
+  </div>
+</div>
+

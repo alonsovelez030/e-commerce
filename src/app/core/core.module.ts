@@ -5,6 +5,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { SuiDropdownModule } from 'ng2-semantic-ui';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularWebStorageModule } from 'angular-web-storage';
 
 /* Services */
 import { ShoppingCarService } from './services/shopping-car.service';
@@ -15,7 +16,8 @@ import { CategoriesService } from './services/categories.service';
   imports: [
     CommonModule,
     SuiDropdownModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularWebStorageModule
   ],
   declarations: [
     NotFoundComponent,

@@ -53,17 +53,6 @@
 }
 
 @media (max-width: 991px) {
-  @keyframes slowshowing {
-    0%{
-      width: 100px;
-    }
-    50%{
-      width: 150px;
-    }
-    100%{
-      width: 250px;
-    }
-  }
   .float-side-bar{
     display: block !important;
     position: absolute !important;

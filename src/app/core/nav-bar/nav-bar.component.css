@@ -33,6 +33,46 @@ nav .logo-title{ margin: 10px; cursor: pointer; }
   line-height: 15px;
 }
 
+/* Side nav */
+.sidenav {
+  height: 100%;
+  border-left: 1px solid #e5edef;
+  background-color: #fff;
+  width: 250px;
+  overflow: auto;
+  padding: 10px 0;
+  z-index: 1009;
+  right: 0;
+  position: fixed;
+  margin-top: 60px;
+}
+.sidenav ul{ padding:0px; }
+.sidenav ul li{
+  display: block;
+  min-height: 45px;
+  line-height: 45px;
+  transition: .3s;
+}
+.sidenav ul li a{
+  display: block;
+  transition: .3s;
+  text-align: left;
+  color: #333;
+  font-size: 14px;
+  padding: 0 20px;
+  position: relative;
+}
+.sidenav ul li a i{ float: right; }
+.sidenav ul li:hover, .active{ background-color: #f3f3f3; }
+.sidenav ul li>a:hover, .active a{ color: #1cb7c7 !important; }
+
+.show-ship{ 
+  display: block !important; 
+  animation: slowshowing 0.1s ease-in-out;
+  -webkit-animation: slowshowing 0.1s ease-in-out;
+  -moz-animation: slowshowing 0.1s ease-in-out;
+}
+
 @media (max-width: 991px) {
   nav{
     height: 49px;
@@ -42,5 +82,7 @@ nav .logo-title{ margin: 10px; cursor: pointer; }
     font-size: 25px;
     margin: 7px 7px !important;
   }
+  .sidenav{ margin-top: 49px; }
   .container-shopping{ padding: 7px 7px; }
 }
+

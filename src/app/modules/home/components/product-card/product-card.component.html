@@ -12,7 +12,8 @@
       </div>
     </div>
     <button class="ui teal bottom attached button"
-            [disabled]="!product.available">
+            [disabled]="!product.available"
+            (click)="addToShopping(product)">
       <i class="add icon"></i>
       Agregar al carrito
     </button>

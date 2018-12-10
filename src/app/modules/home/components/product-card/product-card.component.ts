@@ -20,4 +20,8 @@ export class ProductCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  addToShopping(product){
+    this.addShopping.emit(product);
+  }
+
 }
