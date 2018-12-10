@@ -38,9 +38,9 @@ nav .logo-title{ margin: 10px; cursor: pointer; }
   height: 100%;
   border-left: 1px solid #e5edef;
   background-color: #fff;
-  width: 250px;
+  width: 280px;
   overflow: auto;
-  padding: 10px 0;
+  padding: 10px 10px;
   z-index: 1009;
   right: 0;
   position: fixed;
@@ -72,6 +72,9 @@ nav .logo-title{ margin: 10px; cursor: pointer; }
   -webkit-animation: slowshowing 0.1s ease-in-out;
   -moz-animation: slowshowing 0.1s ease-in-out;
 }
+
+/* Cards */
+.card .extra .description{ margin-top: 2em !important; }
 
 @media (max-width: 991px) {
   nav{

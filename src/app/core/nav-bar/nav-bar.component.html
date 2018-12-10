@@ -17,6 +17,38 @@
 
 <!-- Shoopping cart -->
 <div class="sidenav d-none" [ngClass]="{'show-ship':showShip}">
+    <div class="ui cards">
+      <!-- <div class="card">
+        <div class="content">
+          <div class="header">
+            asdasdads
+            <a class="ui red circular label float-right">
+              123123123
+            </a>
+          </div>
+          <div class="description mt-4">
+              <span>No disponible - </span> Stock: 123
+          </div>
+        </div>
+        <button class="ui teal bottom attached button">
+          <i class="add icon"></i>
+          Agregar al carrito
+        </button>
+      </div> -->
+      <div class="card">
+          <div class="content">
+              <a class="ui red circular label float-right">
+                123123123
+              </a>
+            <div class="header float-left mt-1">
+              Elliot Fu
+            </div>
+            <div class="description">
+              Cantidad: 34
+            </div>
+          </div>
+        </div>
+    </div>
   <div>
       <div *ngFor="let ship of shippingList">
         {{ ship.product.name }} - {{ ship.quantity }}
