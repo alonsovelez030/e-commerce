@@ -1,0 +1,66 @@
+<!-- Filter Price -->
+<label>
+  <input type="range"
+          min="0"
+          [max]="30000"
+          numeric
+          [(ngModel)]="FilterOptions.min"
+          (ngModelChange)="emitFilter()">
+  Min:{{ FilterOptions.min | currency }}
+</label>
+<hr>
+<label>
+  <input type="range"
+          min="0"
+          [max]="30000"
+          numeric
+          [(ngModel)]="FilterOptions.max"
+          (ngModelChange)="emitFilter()">
+  Max: {{ FilterOptions.max |  currency }}
+</label>
+<hr>
+
+<!-- Filter Stock -->
+<label>
+  <input type="range"
+          min="0"
+          max="1000"
+          numeric
+          [(ngModel)]="FilterOptions.minStock"
+          (ngModelChange)="emitFilter()">
+  MinStock:{{ FilterOptions.minStock }}
+</label>
+<hr>
+<label>
+  <input type="range"
+          min="0"
+          max="1000"
+          numeric
+          [(ngModel)]="FilterOptions.maxStock"
+          (ngModelChange)="emitFilter()">
+  MaxStock: {{ FilterOptions.maxStock }}
+</label>
+<hr>
+
+<!-- Available -->
+<div class="ui form">
+    <div class="grouped fields">
+        <label>Disponible</label>
+        <div class="field">
+            <sui-checkbox [(ngModel)]="FilterOptions.available" (ngModelChange)="emitFilter()" class="toggle">Productos disponibles</sui-checkbox>
+        </div>
+    </div>
+</div>
+
+<!-- Sort -->
+<sui-select class="selection"
+            [(ngModel)]="FilterOptions.sort"
+            (ngModelChange)="emitFilter()"
+            labelField="name"
+            placeholder="Orden"
+            [options]="options"
+            #select>
+    <sui-select-option *ngFor="let option of FilterOptions.sortOptions"
+                        [value]="option">
+    </sui-select-option>
+</sui-select>

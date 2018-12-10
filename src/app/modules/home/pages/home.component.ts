@@ -18,21 +18,11 @@ export class HomeComponent implements OnInit {
   productList:Products[];
   Title:string;
   Filters:any = {};
-  FilterOptions:any = {
-    min: 0,
-    max: 30000,
-    minStock:0,
-    maxStock:1000,
-    available:false,
-    sort: {name:'Precio',field:'-price'},
-    sortOptions:[
-      {name:'Precio',field:'-price'},
-      {name:'Cantidad',field:'-quantity'}
-    ]
-  };
+  FilterOptions:any;
 
   constructor(public products: ProductsService,
-              private categories: CategoriesService) {}
+              private categories: CategoriesService) {
+  }
 
   ngOnInit() {
     this.getProducts();
@@ -53,6 +43,7 @@ export class HomeComponent implements OnInit {
     this.products.getProductsData()
     .subscribe(
       response =>{
+        /* Filter */
         if(this.Filters.categorie){
           this.productList = response.products
           .filter(
@@ -66,5 +57,9 @@ export class HomeComponent implements OnInit {
         else this.productList = response.products;
       },err => {}
     )
+  }
+
+  triggerFilter(event){
+    this.FilterOptions = event;
   }
 }

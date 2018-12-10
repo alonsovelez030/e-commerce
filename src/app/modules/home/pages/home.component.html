@@ -1,68 +1,7 @@
 <div class="content-products">
     <div class="title">
         <h1 class="ui header">{{ Title }}</h1>
-
-        <!-- Filter Price -->
-        <label>
-          <input type="range"
-                 min="0"
-                 max="30000"
-                 numeric
-                 [(ngModel)]="FilterOptions.min" >
-          Min:{{ FilterOptions.min | currency }}
-        </label>
-        <hr>
-        <label>
-          <input type="range"
-                 min="0"
-                 max="30000"
-                 numeric
-                 [(ngModel)]="FilterOptions.max">
-          Max: {{ FilterOptions.max |  currency }}
-        </label>
-        <hr>
-
-        <!-- Filter Stock -->
-        <label>
-          <input type="range"
-                 min="0"
-                 max="1000"
-                 numeric
-                 [(ngModel)]="FilterOptions.minStock" >
-          MinStock:{{ FilterOptions.minStock }}
-        </label>
-        <hr>
-        <label>
-          <input type="range"
-                 min="0"
-                 max="1000"
-                 numeric
-                 [(ngModel)]="FilterOptions.maxStock">
-          MaxStock: {{ FilterOptions.maxStock }}
-        </label>
-        <hr>
-
-        <!-- Available -->
-        <div class="ui form">
-            <div class="grouped fields">
-                <label>Disponible</label>
-                <div class="field">
-                    <sui-checkbox [(ngModel)]="FilterOptions.available" class="toggle">Productos disponibles</sui-checkbox>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sort -->
-        <sui-select class="selection"
-                    [(ngModel)]="FilterOptions.sort"
-                    labelField="name"
-                    placeholder="Orden"
-                    [options]="options"
-                    #select>
-            <sui-select-option *ngFor="let option of FilterOptions.sortOptions"
-                               [value]="option">
-            </sui-select-option>
-        </sui-select>
+        <app-filters  (triggerFilter)="triggerFilter($event)"></app-filters>
     </div>
     <app-product-card [products]="productList" [rangeFilter]="FilterOptions"></app-product-card>
 </div>

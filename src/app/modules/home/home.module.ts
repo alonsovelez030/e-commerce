@@ -12,6 +12,7 @@ import { SuiSelectModule } from 'ng2-semantic-ui';
 /* Components */
 import { HomeComponent } from './pages/home.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { FiltersComponent } from './components/filters/filters.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { ProductCardComponent } from './components/product-card/product-card.com
   ],
   declarations: [
     HomeComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    FiltersComponent
   ]
 })
 export class HomeModule { }
