@@ -1,5 +1,8 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
+/* Models */
+import { Products } from '../../../../models/products';
+
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
@@ -7,10 +10,8 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 })
 export class ProductCardComponent implements OnInit {
 
-  products:any[];
-  @Input() set ProductList(data:any) {
-    this.products = data;
-  };
+  @Input() products:Products[];
+  @Input() rangeFilter;
 
   @Output() addShopping = new EventEmitter<any>();
 

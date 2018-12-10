@@ -17,46 +17,53 @@ export class HomeComponent implements OnInit {
 
   productList:Products[];
   Title:string;
+  Filters:any = {};
+  FilterOptions:any = {
+    min: 0,
+    max: 30000,
+    minStock:0,
+    maxStock:1000,
+    available:false,
+    sort: {name:'Precio',field:'-price'},
+    sortOptions:[
+      {name:'Precio',field:'-price'},
+      {name:'Cantidad',field:'-quantity'}
+    ]
+  };
 
   constructor(public products: ProductsService,
-              private categories: CategoriesService) {
-  }
+              private categories: CategoriesService) {}
 
   ngOnInit() {
-    this.getAllProducts();
+    this.getProducts();
+
+    /* ChangeCategorie */
     this.categories.getSelectedCategorie$
     .subscribe(
       response =>{
-        if (response) this.filterProducts({'categorie':response});
-        else this.getAllProducts();
+        this.Filters.categorie = response;
+        this.getProducts();
       }
     );
   }
 
-  getAllProducts(){
-    this.Title = "Todos los productos";
+  getProducts(){
+    this.Title  = (this.Filters.categorie) ? this.Filters.categorie.name : "Todos los productos";
+
     this.products.getProductsData()
     .subscribe(
       response =>{
-        this.productList = response.products;
-      },err => {}
-    )
-  }
-
-  filterProducts(filter){
-    if(filter.categorie) this.Title = filter.categorie.name;
-
-    /* Prepare filter */
-    this.products.getProductsData()
-    .subscribe(
-      response =>{
-        this.productList = response.products
-        .filter(
-          x =>{
-            if(filter.categorie)
-              return x.sublevel_id == filter.categorie.id;
-          }
-        )
+        if(this.Filters.categorie){
+          this.productList = response.products
+          .filter(
+            x =>{
+              if(this.Filters.categorie)
+                return x.sublevel_id == this.Filters.categorie.id;
+              else return x;
+            }
+          )
+        }
+        else this.productList = response.products;
       },err => {}
     )
   }

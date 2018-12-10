@@ -1,14 +1,20 @@
 <div class="ui cards">
-  <div class="card" *ngFor="let product of products">
+  <div class="card" *ngFor="let product of products | range:'price':rangeFilter.min:rangeFilter.max | range:'quantity':rangeFilter.minStock:rangeFilter.maxStock | available:'available':rangeFilter.available | orderBy : rangeFilter.sort.field">
     <div class="content">
-      <div class="header">{{ product.name | titlecase }}</div>
-      <div class="description">
-        Precio: {{ product.price | currency:'$' : true : '1.0-2' }} - Stock: {{ product.quantity }}.
+      <div class="header">
+        {{ product.name | titlecase }}
+        <a class="ui red circular label float-right">
+          {{ product.price | currency:'$' : true : '1.0-2' }}
+        </a>
+      </div>
+      <div class="description mt-4">
+          <span *ngIf="!product.available">No disponible - </span> Stock: {{ product.quantity }}
       </div>
     </div>
-    <div class="ui teal bottom attached button">
+    <button class="ui teal bottom attached button"
+            [disabled]="!product.available">
       <i class="add icon"></i>
       Agregar al carrito
-    </div>
+    </button>
   </div>
 </div>
