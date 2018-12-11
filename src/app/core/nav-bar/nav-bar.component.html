@@ -28,7 +28,7 @@
     
     <!-- Shipping list -->
     <div  *ngIf="shippingList.length">
-        <button class="teal ui button w-100">Finalizar Compra</button>
+        <button class="teal ui button w-100" (click)="cleanShopping()">Finalizar Compra</button>
         <button class="ui button w-100 mt-2" (click)="cleanShopping()">Vacíar Carrito</button>
         <hr>
         <div class="ui cards mt-1">
