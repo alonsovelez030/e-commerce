@@ -1,27 +1,41 @@
-# AplicacionEcommerce
+Ecommerce - El Baratón
+================
+-------------------------------------------------------------------------------------------
+### Funcionalidad:
+- Despliegue del catálogo de productos, carrito de compras, filtros para los productos por:
+. Categorías
+. Precio
+. Disponibilidad
+. Buscador
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.
+### Tecnologías:
+- Angular 6.1
+- [Angular CLI](https://github.com/angular/angular-cli)
+- Bootstrap
+- Semanti UI
+- LocalStorage
+- Dependencias manejadas por: [NPM](https://www.npmjs.com/).
 
-## Development server
+### Puesta en marcha (Modo desarrollo):
+Si hemos descargado por primera vez el proyecto, debemos instalar los servicios y dependencias, para el correcto funcionamiento de la aplicación con el siguiente comando:
+```bash
+npm install
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Si ya instalamos las dependencias, debemos de ubicarnos en la raíz de nuestro proyecto y correr en la terminal el siguiente comando para inicializar el servidor y empezar el desarrollo:
 
-## Code scaffolding
+```bash
+ng serve
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Generar aplicación para producción:
+Debemos correr el siguiente comando para generar un bundle package de toda la aplicación:
+```bash
+ng build --prod
+```
+Luego debemos ubicarnos la carpeta "dist/" que es el paquete de archivos que debes de desplegar con un servidor de archivos estáticos (ej: Ngnix) en el ambiente de producción.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Desarrollo por: Alonso Velez Marulanda
+[LinkdeIn](https://www.linkedin.com/in/alonso-velez-41a93514b/)
+[Github](https://github.com/alonsovelez030)
