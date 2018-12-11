@@ -30,4 +30,12 @@ export class NavBarComponent implements OnInit {
   showShippingCar(){
     this.showShip = this.showShip ? false : true;
   }
+
+  modifyShipping(product,action){
+    this.shopping.modifyShipping(product,action);
+  }
+
+  cleanShopping(){
+    this.shopping.cleanShooping();
+  }
 }

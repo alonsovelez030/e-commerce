@@ -17,42 +17,40 @@
 
 <!-- Shoopping cart -->
 <div class="sidenav d-none" [ngClass]="{'show-ship':showShip}">
-    <div class="ui cards">
-      <!-- <div class="card">
-        <div class="content">
-          <div class="header">
-            asdasdads
-            <a class="ui red circular label float-right">
-              123123123
-            </a>
-          </div>
-          <div class="description mt-4">
-              <span>No disponible - </span> Stock: 123
-          </div>
-        </div>
-        <button class="ui teal bottom attached button">
-          <i class="add icon"></i>
-          Agregar al carrito
-        </button>
-      </div> -->
-      <div class="card">
-          <div class="content">
-              <a class="ui red circular label float-right">
-                123123123
-              </a>
-            <div class="header float-left mt-1">
-              Elliot Fu
+    <!-- if not shipping list -->
+    <h2 class="ui icon header mt-3 empty-car" *ngIf="!shippingList.length">
+      <i class="shopping cart icon"></i>
+      <div class="content">
+        Tu carrito está vacío
+        <div class="sub header">Busca en nuestro catálogo algo que te pueda interesar!.</div>
+      </div>
+    </h2>
+    
+    <!-- Shipping list -->
+    <div  *ngIf="shippingList.length">
+        <button class="teal ui button w-100">Finalizar Compra</button>
+        <button class="ui button w-100 mt-2" (click)="cleanShopping()">Vacíar Carrito</button>
+        <hr>
+        <div class="ui cards mt-1">
+          <div class="card" *ngFor="let ship of shippingList">
+              <div class="content">
+                <span class="float-right">
+                    <span class="input-number-decrement" (click)="modifyShipping(ship,'subtract')">
+                      <label *ngIf="ship.quantity>1">–</label>
+                      <i *ngIf="ship.quantity == 1" class="trash alternate icon small" style="margin:0"></i>
+                    </span>
+                    <input class="input-number" type="text" [value]="ship.quantity" readonly>
+                    <span class="input-number-increment" (click)="modifyShipping(ship,'added')">+</span>
+                </span>
+                <div class="header float-left mt-1">
+                  {{ ship.product.name }}
+                </div>
+                <div class="description">
+                  Cantidad: {{ ship.quantity }}x{{ ship.product.price | currency:'$' : true : '1.0-2' }}
+                </div>
+              </div>
             </div>
-            <div class="description">
-              Cantidad: 34
-            </div>
-          </div>
         </div>
     </div>
-  <div>
-      <div *ngFor="let ship of shippingList">
-        {{ ship.product.name }} - {{ ship.quantity }}
-      </div>
-  </div>
 </div>
 

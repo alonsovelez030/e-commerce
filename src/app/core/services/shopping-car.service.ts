@@ -9,7 +9,6 @@ export class ShoppingCarService {
   shipping:any[];
 
   constructor(public localStorage: LocalStorageService) {
-    //this.localStorage.remove('shipping');
     this.getProductList()
   }
 
@@ -18,7 +17,6 @@ export class ShoppingCarService {
   }
 
   addProducts(product){
-    
     if(this.shipping.length){
       var index = this.shipping.findIndex(x => x.product.id == product.id);
       if (index === -1){
@@ -29,5 +27,23 @@ export class ShoppingCarService {
     } else this.shipping.push({quantity:1,product:product});
 
     this.localStorage.set('shipping',this.shipping);
+  }
+
+  modifyShipping(product,action){
+    if(action == 'subtract'){
+      if(product.quantity <= 1){
+        const index = this.shipping.indexOf(product);
+        this.shipping.splice(index, 1);
+      }else this.shipping.filter(x => x.product.id == product.product.id).map(x=>{ x.quantity--});
+    }else if(action == 'added'){
+      this.shipping.filter(x => x.product.id == product.product.id).map(x=>{ x.quantity++ });
+    }
+
+    this.localStorage.set('shipping',this.shipping);
+  }
+
+  cleanShooping(){
+    this.shipping.length = 0;
+    this.localStorage.remove('shipping');
   }
 }

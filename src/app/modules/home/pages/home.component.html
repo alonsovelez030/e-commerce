@@ -3,15 +3,15 @@
         <h1 class="ui header">
           {{ Title }}
           <button class="ui basic teal button ml-2" (click)="showFilterFn()">
-            Filtrar
+            Filtrar productos
             <i *ngIf="!showFilter" class="filter icon"></i>
             <i *ngIf="showFilter" class="arrow up icon"></i>
           </button>
         </h1>
         <div class="contain-filters" [ngClass]="{'show-filter': showFilter}">
             <app-filters  (triggerFilter)="triggerFilter($event)"></app-filters>
-            <hr class="mt-5">
         </div>
+        <hr class="mb-1 mt-2">
     </div>
     <app-product-card [products]="productList" [rangeFilter]="FilterOptions" (addShopping)="addShopping($event)"></app-product-card>
 </div>
