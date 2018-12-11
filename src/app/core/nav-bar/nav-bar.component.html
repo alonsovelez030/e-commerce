@@ -35,12 +35,14 @@
           <div class="card" *ngFor="let ship of shippingList">
               <div class="content">
                 <span class="float-right">
-                    <span class="input-number-decrement" (click)="modifyShipping(ship,'subtract')">
-                      <label *ngIf="ship.quantity>1">–</label>
-                      <i *ngIf="ship.quantity == 1" class="trash alternate icon small" style="margin:0"></i>
-                    </span>
+                    <button class="ui icon button m-0 p-2 red input-number-decrement" (click)="modifyShipping(ship,'subtract')">
+                      <i class="minus icon" *ngIf="ship.quantity>1"></i>  
+                      <i class="trash alternate icon" *ngIf="ship.quantity == 1"></i>
+                    </button>
                     <input class="input-number" type="text" [value]="ship.quantity" readonly>
-                    <span class="input-number-increment" (click)="modifyShipping(ship,'added')">+</span>
+                    <button class="ui icon button m-0 p-2 teal input-number-increment" (click)="modifyShipping(ship,'added')">
+                        <i class="plus icon"></i>
+                    </button>
                 </span>
                 <div class="header float-left mt-1">
                   {{ ship.product.name }}

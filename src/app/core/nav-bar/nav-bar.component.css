@@ -84,46 +84,13 @@ nav .logo-title{ margin: 10px; cursor: pointer; }
 .input-number {
   width: 31px;
   margin: 0px 5px;
-  vertical-align: top;
+  vertical-align: unset;
   text-align: center;
   outline: none;
-}
-
-.input-number,
-.input-number-decrement,
-.input-number-increment {
   border: none;
   height: 24px;
   user-select: none;
 }
-
-.input-number-decrement,
-.input-number-increment {
-  display: inline-block;
-  width: 24px;
-  line-height: 27px;
-  font-size: 24px;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 4px;
-}
-.input-number-decrement:active,
-.input-number-increment:active {
-  background: #ddd;
-}
-
-.input-number-decrement {
-  border-right: none;
-  background-color: #fd5757;
-}
-
-.input-number-increment {
-  border-left: none;
-  background-color: #1cb7c7;
-}
-
 
 @media (max-width: 991px) {
   nav{
