@@ -1,5 +1,5 @@
 <div class="ui cards">
-  <div class="card" *ngFor="let product of products | range:'price':rangeFilter.min:rangeFilter.max | range:'quantity':rangeFilter.minStock:rangeFilter.maxStock | available:'available':rangeFilter.available | orderBy : rangeFilter.sort.field">
+  <div class="card" *ngFor="let product of products | range:'price':rangeFilter.min:rangeFilter.max | range:'quantity':rangeFilter.minStock:rangeFilter.maxStock | available:'available':rangeFilter.available | orderBy : rangeFilter.sort.field | search:'name':rangeFilter.search">
     <div class="content">
       <div class="header">
         {{ product.name | titlecase }}

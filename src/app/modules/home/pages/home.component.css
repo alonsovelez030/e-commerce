@@ -5,14 +5,22 @@
   width: 100%;
 }
 .title{ padding: 15px 60px; }
-.title h1{ font-weight: 100; }
+.title h1{ font-weight: 100; display: inline; }
 .title button{ vertical-align: middle; }
 
 .contain-filters{ display: none; }
 .show-filter{ display: block; }
+.search-products input{ padding: 9px 0px 8px 9px;; font-size: 15px; }
+
 @media (max-width: 991px) {
   .content-products{
     float: none;
     padding-left: 0;
   }
+}
+@media (max-width: 682px){
+  .header button{ width: 100%; margin-left: 0 !important; }
+  .search-content{ width: 100%; margin-top: 10px;}
+  .search-products{ width:100%; margin-left: 0 !important;}
+  .search-products input{ width: 100%; }
 }

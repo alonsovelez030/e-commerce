@@ -35,6 +35,9 @@ export class HomeComponent implements OnInit {
       response =>{
         this.Filters.categorie = response;
         this.getProducts();
+
+        /* Clean Options Search */
+        this.FilterOptions.search = '';
       }
     );
   }

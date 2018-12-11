@@ -14,6 +14,7 @@ export class FiltersComponent implements OnInit {
     minStock:0,
     maxStock:1000,
     available:false,
+    search:'',
     sort: {name:'Precio',field:'-price'},
     sortOptions:[
       {name:'Precio',field:'-price'},

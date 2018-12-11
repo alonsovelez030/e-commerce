@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { RangePipe } from './pipes/range.pipe';
 import { AvailablePipe } from './pipes/available.pipe';
 import { OrderByPipe } from './pipes/sort.pipe';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   imports: [
@@ -13,12 +14,14 @@ import { OrderByPipe } from './pipes/sort.pipe';
   declarations: [
     RangePipe,
     AvailablePipe,
-    OrderByPipe
+    OrderByPipe,
+    SearchPipe
   ],
   exports: [
     RangePipe,
     AvailablePipe,
-    OrderByPipe
+    OrderByPipe,
+    SearchPipe
   ]
 })
 export class SharedModule { }

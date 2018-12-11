@@ -1,17 +1,25 @@
 <div class="content-products">
     <div class="title">
         <h1 class="ui header">
-          {{ Title }}
-          <button class="ui basic teal button ml-2" (click)="showFilterFn()">
-            Filtrar productos
-            <i *ngIf="!showFilter" class="filter icon"></i>
-            <i *ngIf="showFilter" class="arrow up icon"></i>
-          </button>
+            {{ Title }}
+            <button class="ui basic teal button ml-2" (click)="showFilterFn()">
+                Filtrar productos
+                <i *ngIf="!showFilter" class="filter icon"></i>
+                <i *ngIf="showFilter" class="arrow up icon"></i>
+            </button>
         </h1>
+        <label *ngIf="Filters.categorie && !(Filters.categorie.sublevels)" class="search-content">
+            <div class="ui icon input search-products ml-1">
+                <input type="text" 
+                       placeholder="Buscar..."
+                       [(ngModel)]="FilterOptions.search">
+                <i class="search icon"></i>
+            </div>
+        </label>
         <div class="contain-filters" [ngClass]="{'show-filter': showFilter}">
             <app-filters  (triggerFilter)="triggerFilter($event)"></app-filters>
         </div>
-        <hr class="mb-1 mt-2">
+        <hr class="mb-1 mt-3">
     </div>
     <app-product-card [products]="productList" [rangeFilter]="FilterOptions" (addShopping)="addShopping($event)"></app-product-card>
 </div>
